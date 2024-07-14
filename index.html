@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/6.0.2/esm/ionicons.min.js">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    scroll-behavior: smooth;
+}
+#header {
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(Bg/Laptop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    padding-bottom: 60px;
+    /* background-position: center; */
+}
+.menu {
+    top: 0;
+    position: sticky;
+    width: 100%;
+    height: auto;
+    background: rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+.menu .logo {
+    margin: 10px;
+}
+.menu .logo h2 {
+    padding: 5px;
+}
+.menu ul {
+    list-style: none;
+    border-bottom: 2px solid rgb(204, 204, 204);
+}
+.menu ul li {
+    display: inline-block;
+    padding: 20px;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: large;
+}
+.menu ul li:hover{
+    border-bottom: 3px solid #ff7200;
+}
+.menu ul li:hover a,.menu ul li.active a {
+    color: #ff7200
+}
+.menu ul li.active {
+    color: #ff7200;
+    border-bottom: 3px solid #ff7200;
+}
+.menu .link {
+    margin: 10px;
+}
+.menu .link a {
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid #ff7200
+}
+.menu .link a.sign {
+    color: #ff7200;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background: transparent;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin: 5px 20px 10px 10px;
+    transition: 0.8s ease-in-out;
+}
+.menu .link a.sign:hover {
+    background: #ff7200;
+    color: #fff;
+}
+.menu .link a.login {
+    color: #ff7200;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin: 5px 20px 10px 10px;
+    color: #fff;
+    background: #ff7200;
+    transition: 0.8s ease-in-out;
+}
+.menu .link a.login:hover {
+    background: transparent;
+    color: #ff7200;
+}
+.menu-2 {
+    display: none;
+}
+#header .banner-text {
+    margin: 10%;
+    color: #fff;
+}
+#header .banner-text h2 {
+    padding: 10px;
+}
+#header .banner-text p {
+    padding: 10px;
+}
+#header .banner-text .btn {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(to right, rgba(204, 204, 204, 0.795),#ff7200);
+    text-align: center;
+    color: #fff;
+    border: none!important;
+    border-radius: 15px;
+    font-weight: bolder;
+    transition: 0.8s ease-in-out;
+}
+#header .banner-text .btn:hover {
+    background: linear-gradient(to left, rgba(204, 204, 204, 0.795),#ff7200);
+}
+#header .banner-text .btn span {
+    padding: 8px;
+}
+#header .banner-text .btn:hover span {
+    animation-name: btn-span;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    /* animation-delay: 2s; */
+    /* animation-fill-mode: forwards; */
+    /* animation-play-state: paused; */
+    /* animation-iteration-count: infinite; */
+    /* animation-direction: alternate; */
+}
+@keyframes btn-span {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(7px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    75% {
+        transform: translateX(7px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+/* Portfolio */
+#portfolio {
+    margin-top: 100px;
+}
+.port-head {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    background: purple;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.port-head span {
+    font-size: 40px;
+    /* margin: 20px auto; */
+    padding: 20px;
+    /* height: 100px;
+    width: 100px; */
+    text-align: center;
+    /* border: 1px solid #fff; */
+    /* background: purple; */
+    color: #fff!important;
+
+    /* border-radius: 50%; */
+}
+.port-item {
+    margin-bottom: 60px;
+}
+.port-item a {
+    text-decoration: none;
+    color: #ff7200;
+    font-size: larger;
+    font-weight: 500;
+}
+.port-item-2 {
+    margin-top: 30px;
+}
+.port-item-2 img {
+    max-width: 300px!important;
+    margin: 0 auto;
+}
+.port-item-2 .port-cont {
+    margin-top: 100px;
+}
+.port-item-2 .port-cont .port-head-2 {
+    padding: 10px;
+}
+.port-item-2 .port-cont .port-head-2 span {
+    width: 60px;
+    border-bottom: 2px solid #ff7200;
+    padding: 5px;
+}
+.port-item-2 .port-cont p {
+    padding: 10px;
+}
+.port-item-2 .port-cont .btn {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(to right, rgba(204, 204, 204, 0.795),#ff7200);
+    text-align: center;
+    color: #fff;
+    border: none!important;
+    border-radius: 15px;
+    font-weight: bolder;
+    transition: 0.8s ease-in-out;   
+}
+.port-item-2 .port-cont .btn:hover {
+    background: linear-gradient(to left, rgba(204, 204, 204, 0.795),#ff730098);
+}
+/* Promo */
+.promo-box {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    padding: 20px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url('Bg/pic 3.jpg');
+}
+.promo-box .promo-content {
+    padding-top: 30px;
+}
+.promo-box img {
+    max-width: 350px;
+    margin: 20px auto;
+}
+.promo-box .promo-head {
+    color: #fff;
+}
+.promo-box .promo-head span {
+    width: 30px;
+    border-bottom: 2px solid #ff7200;
+}
+.promo-box p {
+    color: #fff;
+}
+.promo-box .btn {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(to right, rgba(204, 204, 204, 0.795),#ff7200);
+    text-align: center;
+    color: #fff;
+    border: none!important;
+    border-radius: 15px;
+    font-weight: bolder;
+    transition: 0.8s ease-in-out;
+}
+.promo-box .btn:hover {
+    background: linear-gradient(to left, rgba(204, 204, 204, 0.795),#ff730098);
+}
+/* About */
+.about-item {
+    margin-top: 30px;
+}
+.about-item img {
+    max-width: 300px!important;
+    margin: 0 auto;
+}
+.about-item .about-cont {
+    margin-top: 100px;
+}
+.about-item .about-cont .about-head {
+    width: 40px;
+    height: 20px;
+    background: #ff7200;
+    margin: 0 auto;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /* border-bottom: 2px solid #ff7200; */
+}
+
+.about-item .about-cont p {
+    padding: 30px;
+}
+.about-item .about-cont .btn {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(to right, rgba(204, 204, 204, 0.795),#ff7200);
+    text-align: center;
+    color: #fff;
+    border: none!important;
+    border-radius: 15px;
+    font-weight: bolder;
+    transition: 0.8s ease-in-out;   
+}
+.about-item-2 .about-cont .btn:hover {
+    background: linear-gradient(to left, rgba(204, 204, 204, 0.795),#ff730098);
+}
+/* Contact */
+#contact {
+    width: 100%!important;
+    height: auto;
+    background: #ccc;
+    margin-top: 30px;
+}
+.contact-icon span {
+    color: purple;
+    font-size: 30px;
+    padding: 20px;
+}
+/* Footer */
+footer {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background: purple;
+    color: #fff;
+}
+footer .footer-icon {
+    padding: 20px;
+    margin: 10px;
+}
+footer .footer-icon span {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: purple;
+    padding: 10px;
+    border-radius: 70%;
+    background: #fff;
+    margin: 10px;
+    line-height: 25px;
+    transition: 0.8s ease-in-out;
+    font-weight: bolder;
+    font-size: larger;
+    cursor: pointer;
+}
+.fa-facebook:hover {
+    color: rgb(0,110,255);
+}
+.fa-twitter:hover {
+    color: rgb(86,154,243);
+}
+.fa-instagram:hover {
+    color: rgb(255,0,191);
+}
+footer .footer-list {
+    list-style: none;
+    padding: 20px;
+    display: inline-flex;
+}
+footer .footer-list li {
+    padding: 10px 10px 10px 0px;
+}
+@media (max-width: 880px) {
+    .menu .menu-content,.link {
+        display: none;
+    }
+    .menu-2 {
+        display: contents;
+    }
+    .menu-2 .btn {
+        display: inline-block;
+        border: none !important;
+    }
+    .menu-2 .btn .fa {
+        color: #fff;
+        font-size: 20px;
+        padding: 10px;
+        border: 2px solid #ff7200!important;
+        border-radius: 5px 10px 2px 10px;
+        transition: 0.8s ease-in-out;
+    }
+    .menu-2 .btn .fa:hover {
+        background: rgba(204, 204, 204, 0.493);
+        font-weight: bolder;
+        
+    }
+    .menu-2 .offcanvas {
+        background: #ff73004d;
+    }
+    .menu-2 .navbar-nav {
+        border: none;
+        margin: 10px;
+    }
+    .menu-2 .navbar-nav li {
+        display: inline-block;
+        border: none!important;
+    }
+    .menu-2 .navbar-nav li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: large;
+        transition: 0.8s ease-in-out;
+    }
+    .menu-2 .navbar-nav li a:hover {
+        color: #ff7200;
+    }
+    .menu-2 .link-2 {
+        margin: 40px 10px;
+    }
+    .menu-2 .link-2 a {
+        text-decoration: none;
+        display: inline-block;
+        border: 2px solid #ff7200
+    }
+    .menu-2 .link-2 a.sign {
+        color: #ff7200;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        background: transparent;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin: 5px 20px 10px 10px;
+        transition: 0.8s ease-in-out;
+    }
+    .menu-2 .link-2 a.sign:hover {
+        background: #ff7200;
+        color: #fff;
+    }
+    .menu-2 .link-2 a.login {
+        color: #ff7200;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        margin: 5px 20px 10px 10px;
+        color: #fff;
+        background: #ff7200;
+        transition: 0.8s ease-in-out;
+    }
+    .menu-2 .link-2 a.login:hover {
+        background: transparent;
+        color: #ff7200;
+    }
+    footer .footer-list {
+        list-style: none;
+        padding: 20px 0px 20px 0px;
+        display: inline-flex;
+    }
+}
+</style>
+</head>
+<body>
+<section id="header">
+    <div class="menu">
+        <div class="logo">
+            <h2 class="text-warning">Code<span class="text-light">Light</span></h2>
+        </div>
+        <ul class="menu-content">
+            <li><a href="#top">Home</a></li>
+            <li class="active"><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="link">
+            <a href="#" type="button" class="sign">Sign Up</a>
+            <a href="#" type="button" class="login">Login</a>
+        </div>
+        <div class="menu-2">
+            <!--<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>-->
+
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <!--<span class="navbar-toggler-icon"></span>-->
+                <i class="fa fa-bars"></i>
+             </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header bg-warning">
+            <h2 id="offcanvasRightLabel">Code<span class="text-light">Light</span></h2>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav ml-auto">
+                <li><a href="#top">Home</a></li>
+                <li class="active"><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="link-2 text-center">
+                <a href="#" type="button" class="sign">Sign Up</a>
+                <a href="#" type="button" class="login">Login</a>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="banner-text">
+            <h2 class="text-warning">Code<span class="text-light">Light</span></h2>
+            <p>Lorem ipsum dolor sit amet
+                 consectetur adipisicing 
+                 elit. Mollitia excepturi
+                  voluptates placeat 
+                  repudiandae quis. Quis 
+                  totam eum, similique 
+                  eligendi rem aperiam 
+                  aliquam magni aliquid, 
+                  animi ad, officiis neque
+                   in! Hic?
+            </p>
+            <a href="#" class="btn">Read More<span class="fa fa-angle-double-right"></span></a>
+        </div>
+
+
+</section>
+
+<section id="portfolio">
+    <div class="container">
+        <div class="row text-center">
+            <div class="port-item col-md-4">
+                <div class="port-head">
+                    <span class="fa fa-folder"></span>
+                </div>
+                <h3>Document</h3>
+                <p>
+                    Lorem ipsum dolor sit 
+                    amet consectetur 
+                    adipisicing elit. 
+                    Omnis, voluptates.
+                </p>
+                <a href="#">Apply</a>
+            </div>
+
+            <div class="port-item col-md-4">
+                <div class="port-head">
+                    <span class="fa fa-dollar"></span>
+                </div>
+                <h3>Currency</h3>
+                <p>
+                    Lorem ipsum dolor sit 
+                    amet consectetur 
+                    adipisicing elit. 
+                    Omnis, voluptates.
+                </p>
+                <a href="#">Apply</a>
+            </div>
+
+            <div class=" port-item col-md-4">
+                <div class="port-head">
+                    <span class="fa fa-shopping-cart"></span>
+                </div>
+                <h3>Shopping</h3>
+                <p>
+                    Lorem ipsum dolor sit 
+                    amet consectetur 
+                    adipisicing elit. 
+                    Omnis, voluptates.
+                </p>
+                <a href="#">Apply</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row text-center">
+            <div class="port-item-2 col-md-6">
+                <div class="port-cont text-center">
+                <div class="port-head-2 text-center">
+                    <h2><span>Crypto</span> Currency</h2>
+                </div>
+                    <p>
+                        Lorem ipsum dolor
+                         sit amet consectetur
+                          adipisicing elit. 
+                          Nam dolore ipsam 
+                          deleniti sequi quis 
+                          dignissimos sunt,
+                           quibusdam magni qui 
+                           odio!
+                    </p>
+                    <a href="#" class="btn">Apply Now</a>
+                    </div>
+            </div>
+            <div class="port-item-2 col-md-6 text-center">
+                <img src="Bg/pic 4.jpg"  class="img-responsive d-block img-fluid text-center">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="promo">
+    <div class="promo-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img src="Bg/pic 5.jpg" class="img-responsive d-block img-fluid w-100 text-center">
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="promo-content text-center">
+                        <div class="promo-head">
+                            <h2>Forex <span>Trade</span></h2>
+                        </div>
+                            <p>
+                                Lorem ipsum dolor sit 
+                                amet consectetur
+                                 adipisicing elit. 
+                                 Vero nobis excepturi 
+                                 asperiores necessitatibus 
+                                 eaque? Deleniti, dolore! 
+                                 Illum tenetur enim 
+                                 corrupti veniam tempore,
+                                doloremque necessitatibus 
+                                consequatur?
+                            </p>
+                            <a href="#" class="btn">Apply</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <div class="row text-center">
+            <div class="about-item col-md-6">
+                <div class="about-cont text-center">
+                <div class="about-head text-center">
+                    <h2>About</h2>
+                </div>
+                    <p>
+                        Lorem ipsum dolor
+                         sit amet consectetur
+                          adipisicing elit. 
+                          Nam dolore ipsam 
+                          deleniti sequi quis 
+                          dignissimos sunt,
+                           quibusdam magni qui 
+                           odio!
+                    </p>
+                    <a href="#" class="btn">Apply Now</a>
+                    </div>
+            </div>
+            <div class="about-item col-md-6 text-center">
+                <img src="Bg/pic 4.jpg"  class="img-responsive d-block img-fluid text-center">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container"> 
+        <div class="contact-icon text-center">
+            <span class="fa fa-cc-visa"></span>
+            <span class="fa fa-cc-paypal"></span>
+            <span class="fa fa-cc-stripe"></span>
+            <span class="fa fa-cc-mastercard"></span>
+            <span class="fa fa-cc-diners-club"></span>
+            <span class="fa fa-cc-amex"></span>
+            <span class="fa fa-digg"></span>
+            <span class="fa fa-amazon"></span>
+        </div>
+    </div>
+</section>
+
+<section id="footer">
+    <footer>
+        <div class="container text-center">
+            <div class="footer-icon text-center">
+            <span class="fa fa-facebook"></span>
+            <span class="fa fa-twitter"></span>
+            <span class="fa fa-instagram"></span>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            <div class="footer-list">
+                <li class="code text-warning">Code<span class="text-light">Light</span></li>
+                <li>Help Center</li>
+                <li>Language Packs</li>
+                <li>Private Policy</li>
+                <li>Language Packs</li>
+            </div>
+            </div>
+            <div class="col-md-6">
+            <div class="footer-list">
+                <li>09044687582</li>
+                <li>iwejuoebuka@gmail.com</li>
+            </div>
+            </div>
+
+        </div>
+        </div>
+    </footer>
+</section>
+
+
+</body>
+</html>
